@@ -126,3 +126,154 @@ TARGET_LINK_LIBRARIES ( vdb_view
   ${OPENVDB_APPLICATION_LINK_LIBRARIES}
   ${OPENVDB_GLFW3_LINK_LIBRARIES}
   )
+
+# INSTALLATION
+INSTALL ( TARGETS
+  vdb_print
+  vdb_render
+  vdb_view
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/bin
+  )
+
+INSTALL ( TARGETS
+  openvdb_static
+  openvdb_shared
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/lib
+  )
+
+INSTALL ( FILES
+  ./Exceptions.h
+  ./Grid.h
+  ./Metadata.h
+  ./Platform.h
+  ./PlatformConfig.h
+  ./Types.h
+  ./openvdb.h
+  ./version.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb
+  )
+
+INSTALL ( FILES
+  ./io/Archive.h
+  ./io/Compression.h
+  ./io/File.h
+  ./io/GridDescriptor.h
+  ./io/Queue.h
+  ./io/Stream.h
+  ./io/TempFile.h
+  ./io/io.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb/io
+  )
+
+INSTALL ( FILES
+  ./math/BBox.h
+  ./math/ConjGradient.h
+  ./math/Coord.h
+  ./math/DDA.h
+  ./math/FiniteDifference.h
+  ./math/LegacyFrustum.h
+  ./math/Maps.h
+  ./math/Mat.h
+  ./math/Mat3.h
+  ./math/Mat4.h
+  ./math/Math.h
+  ./math/Operators.h
+  ./math/Proximity.h
+  ./math/QuantizedUnitVec.h
+  ./math/Quat.h
+  ./math/Ray.h
+  ./math/Stats.h
+  ./math/Stencils.h
+  ./math/Transform.h
+  ./math/Tuple.h
+  ./math/Vec2.h
+  ./math/Vec3.h
+  ./math/Vec4.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb/math
+  )
+
+INSTALL ( FILES
+  ./metadata/MetaMap.h
+  ./metadata/Metadata.h
+  ./metadata/StringMetadata.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb/metadata
+  )
+
+INSTALL ( FILES
+  ./tools/ChangeBackground.h
+  ./tools/Clip.h
+  ./tools/Composite.h
+  ./tools/Dense.h
+  ./tools/DenseSparseTools.h
+  ./tools/Diagnostics.h
+  ./tools/Filter.h
+  ./tools/GridOperators.h
+  ./tools/GridTransformer.h
+  ./tools/Interpolation.h
+  ./tools/LevelSetAdvect.h
+  ./tools/LevelSetFilter.h
+  ./tools/LevelSetFracture.h
+  ./tools/LevelSetMeasure.h
+  ./tools/LevelSetMorph.h
+  ./tools/LevelSetRebuild.h
+  ./tools/LevelSetSphere.h
+  ./tools/LevelSetTracker.h
+  ./tools/LevelSetUtil.h
+  ./tools/MeshToVolume.h
+  ./tools/Morphology.h
+  ./tools/ParticlesToLevelSet.h
+  ./tools/PointAdvect.h
+  ./tools/PointIndexGrid.h
+  ./tools/PointPartitioner.h
+  ./tools/PointScatter.h
+  ./tools/PoissonSolver.h
+  ./tools/Prune.h
+  ./tools/RayIntersector.h
+  ./tools/RayTracer.h
+  ./tools/SignedFloodFill.h
+  ./tools/Statistics.h
+  ./tools/ValueTransformer.h
+  ./tools/VectorTransformer.h
+  ./tools/VelocityFields.h
+  ./tools/VolumeAdvect.h
+  ./tools/VolumeToMesh.h
+  ./tools/VolumeToSpheres.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb/tools
+  )
+
+INSTALL ( FILES
+  ./tree/InternalNode.h
+  ./tree/Iterator.h
+  ./tree/LeafManager.h
+  ./tree/LeafNode.h
+  ./tree/LeafNodeBool.h
+  ./tree/NodeManager.h
+  ./tree/NodeUnion.h
+  ./tree/RootNode.h
+  ./tree/Tree.h
+  ./tree/TreeIterator.h
+  ./tree/ValueAccessor.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb/tree
+  )
+
+INSTALL ( FILES
+  ./util/CpuTimer.h
+  ./util/Formats.h
+  ./util/MapsUtil.h
+  ./util/Name.h
+  ./util/NodeMasks.h
+  ./util/NullInterrupter.h
+  ./util/PagedArray.h
+  ./util/Util.h
+  ./util/logging.h
+  DESTINATION
+  ${CMAKE_INSTALL_PREFIX}/include/openvdb/util
+  )
